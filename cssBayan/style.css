@@ -48,7 +48,7 @@ body {
   background-color: bisque;
   /* color: burlywood; */
   border-radius: 0.3rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.6rem;
 
   transition: all 0.8s ease 0s;
 
@@ -201,7 +201,7 @@ body {
 
 }
 
-.accordion_block :checked+.accordion-item_title::after {
+.accordion_block :checked + .accordion-item_title::after {
     /* content: '-'; */
 
     content: url(./assets/svg/windowclose_104378.svg);
@@ -210,6 +210,7 @@ body {
     height: 1rem;
 }
 
+/* Открывает картинку при клике */
 .accordion_block :checked ~ .accordion-item_content {
   /* display: block; */
 
@@ -219,3 +220,14 @@ body {
 
 
 }
+
+/* Проявляет картинку при наведении */
+.accordion_block :hover ~ .accordion-item_content {
+    /* display: block; */
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+  
+  }
