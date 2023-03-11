@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: antiquewhite;
     font-family: 'Arial', sans-serif;
@@ -12,17 +16,21 @@ body {
 /*************************************************************************************************************/
 /*************************************************************************************************************/
 
+/* @media screen and (max-width: 380px) {} */
+
+/* mobile 320x568, tablet 820x1180, desktop 1920×1080 */
+
 .accordion_container {
   max-width: 60vw;
   margin: 0 auto;
 
-  color: burlywood; /*перенес настройки из wrapper */
+  color: burlywood;
 
-  border: green solid 2px;
+  /* border: green solid 2px; */
 }
 
 .accordion_container:hover {
-  border: red solid 2px;
+  /* border: red solid 2px; */
   /* color: #444; */
   color: brown;
   /* color: burlywood; */
@@ -39,52 +47,175 @@ body {
   /* background: ; */
   background-color: bisque;
   /* color: burlywood; */
-  border-radius: 5px;
-  margin-bottom: 10px;
- 
+  border-radius: 0.3rem;
+  margin-bottom: 0.8rem;
+
   transition: all 0.8s ease 0s;
 
+    /* height: 50px;
+    overflow: hidden; */
 
 }
 
 .accordion_block:hover {
-/*изменение размера по осям*/
-transform: scale(1.05, 1.05); 
+    /*изменение размера по осям*/
+    transform: scale(1.05, 1.05);
+
+    /* width: 60vw;
+    height: 15rem; */
 }
+
+/* .mem_min {
+    width: 30rem;
+    height: 15rem;
+
+    background-color: blue;
+
+    background-repeat: no-repeat;
+    background-position: top;
+    background-clip: border-box;
+
+    background-size: contain;
+
+    border: black solid 1px;
+} */
+
+
 
 .accordion-item_title {
-  padding: 10px 15px; /*не сработает если не сделать лабел блочным*/
-  display: flex; /*лабел стал блочным*/
-  justify-content: space-between;
-  font-weight: bold;
+    padding: 0.65rem 0.95rem;
+    /*не сработает если не сделать лабел блочным*/
+    display: flex;
+    /*лабел стал блочным*/
+    justify-content: space-between;
+    font-weight: bold;
 
-  text-transform: uppercase; /*сделаем все буквы большими*/
+    text-transform: uppercase;
+    /*сделаем все буквы большими*/
 
-  position: relative;
+    position: relative;
 
-  cursor: pointer;
+    cursor: pointer;
+
+
 
 }
 
+
+
+
 .accordion-item_title::after {
-  content: '+';
+    /* content: '+'; */
+
+    /* content: url(./assets/svg/check-solid.svg); */
+    content: url(./assets/svg/objectselect_104418.svg);
+
+    width: 1rem;
+    height: 1rem;
+
+
 }
 
 .accordion-item_content {
-  padding: 10px 15px;
+  padding: 0.65rem 0.95rem ;
+
+  /* display: flex;
+  justify-content: flex-end;
+  border-color: aqua; */
+
 }
+
+.mem {
+
+    width: 30rem;
+    height: 15rem;
+
+    flex-shrink: 0; /* не даёт сжиматься фото*/
+
+    background-repeat: no-repeat;
+    background-position: top;
+    background-clip: border-box;
+
+    background-size: contain;
+
+    border: black solid 1px;
+
+}
+
+
+
+.mem-item_01 {
+    /* width: 30rem;
+    height: 20rem; */
+    /* height: 497px; */
+  
+    /*flex-shrink: 0;*/ /* не даёт сжиматься фото*/
+  
+    /* background-image: url("./assets/img/contact_woman.png"); */
+    background-image: url("./assets/img/1648201041_45-kartinkof-club-p-mem-sobaka-kachok-48.jpg");
+
+    /* background-repeat: no-repeat;
+    background-position: top;
+    background-clip: border-box; */
+  
+    /* background-size: cover; */
+    /* background-size: contain; */
+    /* background-size: auto; */
+    /* background-size: 30rem auto; */
+  
+  
+    /* border: black solid 1px; */
+  
+    /* order: 2; */ /* может помочь при адаптации*/
+  }
+
+  .mem-item_02 {
+    background-image: url("./assets/img/mem_04.webp");
+  }
+
+  .mem-item_03 {
+    background-image: url("./assets/img/mem_03.jpg");
+  }
+
+  .mem-item_04 {
+    background-image: url("./assets/img/mem_02.jpg");
+  }
+
+  .mem-item_05 {
+    background-image: url("./assets/img/mem_05.jpg");
+  }
+
+  .mem-item_06 {
+    background-image: url("./assets/img/mem_01.jpg");
+  }
+
+
+
+
+
 
 .accordion_block :checked + .accordion-item_title {
   background-color: aliceblue;
   color: rgb(130, 34, 34);
-  border-radius: 5px;
+  border-radius: 0.3rem;
 
 }
 
-.accordion_block :checked + .accordion-item_title::after {
-  content: '-';
+.accordion_block :checked+.accordion-item_title::after {
+    /* content: '-'; */
+
+    content: url(./assets/svg/windowclose_104378.svg);
+
+    width: 1rem;
+    height: 1rem;
 }
 
 .accordion_block :checked ~ .accordion-item_content {
-  display: block;
+  /* display: block; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
 }
