@@ -1,0 +1,90 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    background-color: antiquewhite;
+    font-family: 'Arial', sans-serif;
+}
+
+
+/*************************************************************************************************************/
+/*************************************************************************************************************/
+/*************************************************************************************************************/
+
+.accordion_container {
+  max-width: 60vw;
+  margin: 0 auto;
+
+  color: burlywood; /*перенес настройки из wrapper */
+
+  border: green solid 2px;
+}
+
+.accordion_container:hover {
+  border: red solid 2px;
+  /* color: #444; */
+  color: brown;
+  /* color: burlywood; */
+  cursor: pointer;
+}
+
+/* скрываю текст и птичку, оставляю только заголовки лабел */
+.accordion_block input,
+.accordion-item_content {
+    display: none;
+}
+
+.accordion_block {
+  /* background: ; */
+  background-color: bisque;
+  /* color: burlywood; */
+  border-radius: 5px;
+  margin-bottom: 10px;
+ 
+  transition: all 0.8s ease 0s;
+
+
+}
+
+.accordion_block:hover {
+/*изменение размера по осям*/
+transform: scale(1.05, 1.05); 
+}
+
+.accordion-item_title {
+  padding: 10px 15px; /*не сработает если не сделать лабел блочным*/
+  display: flex; /*лабел стал блочным*/
+  justify-content: space-between;
+  font-weight: bold;
+
+  text-transform: uppercase; /*сделаем все буквы большими*/
+
+  position: relative;
+
+  cursor: pointer;
+
+}
+
+.accordion-item_title::after {
+  content: '+';
+}
+
+.accordion-item_content {
+  padding: 10px 15px;
+}
+
+.accordion_block :checked + .accordion-item_title {
+  background-color: aliceblue;
+  color: rgb(130, 34, 34);
+  border-radius: 5px;
+
+}
+
+.accordion_block :checked + .accordion-item_title::after {
+  content: '-';
+}
+
+.accordion_block :checked ~ .accordion-item_content {
+  display: block;
+}
