@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+/* * {
+  touch-action: manipulation;
+} */
+
 html {
   scroll-behavior: smooth;
   /* Меняю размер шрифта, чтобы установить новое значение rem */
@@ -78,11 +82,7 @@ h1 {
   margin: 1.5rem auto;
 }
 
-.accordion_block:hover {
-  /*изменение размера по осям*/
-  /*при увеличении тольго по горизонтали меньше трясется*/
-  transform: scale(1.05, 1);
-}
+
 
 .accordion-item_title {
   padding: 1rem 1.5rem;
@@ -145,7 +145,7 @@ h1 {
   /* order: 2; */
   /* может помочь при адаптации*/
 
-  border: black solid 0.1rem;
+  /* border: black solid 0.1rem; */
 
 }
 
@@ -209,15 +209,29 @@ h1 {
 
 }
 
-/* Проявляет картинку при наведении */
-.accordion_block :hover~.accordion-item_content {
-  /* display: block; */
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* разбираюсь с hover */
+@media screen and (min-width: 821px) {
+
+  .accordion_block:hover {
+    /*изменение размера по осям*/
+    /*при увеличении тольго по горизонтали меньше трясется*/
+    transform: scale(1.05, 1);
+  }
+
+  /* Проявляет картинку при наведении */
+  .accordion_block :hover~.accordion-item_content {
+    /* display: block; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
 
 }
+
+
 
 @media screen and (max-width: 1024px) {
   html {
@@ -279,8 +293,9 @@ h1 {
   }
 
   .mem {
-    width: 30rem;
+    width: 29rem;
     height: 20rem;
   }
 
 }
+
